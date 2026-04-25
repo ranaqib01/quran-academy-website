@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Informative Quran Center</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -34,11 +33,7 @@ nav a { color:white; margin:0 15px; text-decoration:none; }
 /* HERO */
 .hero {
   height:100vh;
-  background:
-  linear-gradient(rgba(10,34,57,0.8),rgba(10,34,57,0.9)),
-  urlurl('https://images.unsplash.com/photo-1542810634-71277d95dcbb')
-  background-size:cover;
-  background-position:center;
+  background:linear-gradient(135deg,#0A2239,#1E6FB8);
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -46,8 +41,7 @@ nav a { color:white; margin:0 15px; text-decoration:none; }
   text-align:center;
 }
 
-.hero h1 { font-size:65px; }
-
+.hero h1 { font-size:60px; }
 .hero span { color:#2FA4FF; }
 
 /* BUTTON */
@@ -58,23 +52,12 @@ nav a { color:white; margin:0 15px; text-decoration:none; }
   background:linear-gradient(45deg,#2FA4FF,#1E6FB8);
   text-decoration:none;
   color:white;
-  transition:0.3s;
 }
-
-.btn:hover { transform:scale(1.1); box-shadow:0 0 30px #2FA4FF; }
 
 /* SECTION */
 .section {
   padding:100px 20px;
   text-align:center;
-  opacity:0;
-  transform:translateY(50px);
-  transition:1s;
-}
-
-.section.show {
-  opacity:1;
-  transform:translateY(0);
 }
 
 /* CARDS */
@@ -82,70 +65,42 @@ nav a { color:white; margin:0 15px; text-decoration:none; }
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:25px;
+  gap:20px;
 }
 
 .card {
   width:260px;
-  padding:25px;
-  border-radius:15px;
+  padding:20px;
+  border-radius:10px;
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
-  transition:0.4s;
+  cursor:pointer;
 }
 
-.card:hover {
-  transform:translateY(-10px) scale(1.05);
-  background:#1E6FB8;
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
 }
 
-/* IMAGE SECTION */
-.image-section {
-  background:
-  linear-gradient(rgba(10,34,57,0.8),rgba(10,34,57,0.9)),
-  url('https://images.unsplash.com/photo-1529070538774-1843cb3265df');
-  background-size:cover;
-  padding:100px 20px;
+.modal-content {
+  background:white;
+  color:black;
+  padding:30px;
+  border-radius:10px;
+  max-width:500px;
 }
 
 /* SLIDER */
-.slider {
-  max-width:600px;
-  margin:auto;
-  overflow:hidden;
-}
-
-.slide {
-  display:none;
-  font-style:italic;
-}
-
-.slide.active {
-  display:block;
-}
-
-/* CTA */
-.cta {
-  background:linear-gradient(45deg,#C9A646,#FFD700);
-  color:black;
-  padding:80px;
-}
+.slide { display:none; }
+.slide.active { display:block; }
 
 /* FOOTER */
-footer {
-  background:#000;
-  padding:20px;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
-  border-radius:50%;
-}
+footer { background:#000; padding:20px; }
 
 </style>
 </head>
@@ -156,88 +111,99 @@ footer {
 <div><b>Informative Quran Center</b></div>
 <div>
 <a href="#">Home</a>
-<a href="courses.html">Courses</a>
-<a href="contact.html">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 <h1>Learn Quran <span>Beautifully</span></h1>
-<p>1-on-1 Classes | Certified Teachers | Free Trial</p>
-<a href="https://wa.me/923277720007" class="btn">Start Free Trial</a>
+<p>1-on-1 Classes | Free Trial</p>
+<a href="https://wa.me/923277720007" class="btn">Start Now</a>
 </section>
 
 <!-- COURSES -->
 <section class="section">
 <h2>Our Courses</h2>
+
 <div class="cards">
-<div class="card">Quran Reading</div>
-<div class="card">Tajweed</div>
-<div class="card">Hifz Program</div>
+
+<div class="card" onclick="openModal('basic')">Basic Essentials of Islam</div>
+<div class="card" onclick="openModal('qaida')">Noorani Qaida</div>
+<div class="card" onclick="openModal('reading')">Quran Reading</div>
+<div class="card" onclick="openModal('tajweed')">Tajweed</div>
+<div class="card" onclick="openModal('hifz')">Hifz-e-Quran</div>
+<div class="card" onclick="openModal('tafseer')">Quran with Tafseer</div>
+<div class="card" onclick="openModal('salah')">Salah Course</div>
+<div class="card" onclick="openModal('arabic')">Arabic Language</div>
+<div class="card" onclick="openModal('islam')">Basic Knowledge of Islam</div>
+<div class="card" onclick="openModal('studies')">Islamic Studies</div>
+<div class="card" onclick="openModal('seerah')">Seerah</div>
+<div class="card" onclick="openModal('hadith')">Hadith Studies</div>
+<div class="card" onclick="openModal('dua')">Dua & Zikr</div>
+<div class="card" onclick="openModal('character')">Character Development</div>
+
 </div>
 </section>
 
-<!-- IMAGE SECTION -->
-<section class="section image-section">
-<h2>Learn with Peace & Focus</h2>
-<p>Experience spiritual growth with expert teachers</p>
-</section>
-
-<!-- WHY -->
-<section class="section">
-<h2>Why Choose Us</h2>
-<div class="cards">
-<div class="card">✔ Certified Teachers</div>
-<div class="card">✔ Flexible Timing</div>
-<div class="card">✔ Worldwide Access</div>
-</div>
-</section>
-
-<!-- TESTIMONIAL SLIDER -->
+<!-- TESTIMONIAL -->
 <section class="section">
 <h2>What Students Say</h2>
 
-<div class="slider">
-<div class="slide active">“Amazing teachers and great experience!”</div>
-<div class="slide">“My kids improved quickly. Highly recommended.”</div>
-<div class="slide">“Professional and flexible classes.”</div>
-</div>
+<div class="slide active">Amazing teachers and great experience!</div>
+<div class="slide">My kids improved quickly!</div>
+<div class="slide">Highly recommended academy!</div>
 
-</section>
-
-<!-- CTA -->
-<section class="cta">
-<h2>Start Your Quran Journey Today</h2>
-<a href="https://wa.me/923277720007" class="btn">Chat on WhatsApp</a>
 </section>
 
 <footer>
 <p>© 2026 Informative Quran Center</p>
 </footer>
 
-<a href="https://wa.me/923277720007" class="whatsapp">💬</a>
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span onclick="closeModal()" style="cursor:pointer;">✖</span>
+<div id="modalData"></div>
+</div>
+</div>
 
 <script>
 
-/* SCROLL ANIMATION */
-let sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    let offset = sec.offsetTop - 300;
-    if(window.scrollY > offset) sec.classList.add('show');
-  });
-});
+/* MODAL DATA */
+function openModal(type){
+let content="";
+
+if(type==="basic"){content=`<h2>Basic Islam</h2><p>Learn pillars of Islam.</p>`;}
+if(type==="qaida"){content=`<h2>Noorani Qaida</h2><p>Learn Arabic basics.</p>`;}
+if(type==="reading"){content=`<h2>Quran Reading</h2><p>Learn reading fluently.</p>`;}
+if(type==="tajweed"){content=`<h2>Tajweed</h2><p>Improve recitation.</p>`;}
+if(type==="hifz"){content=`<h2>Hifz</h2><p>Memorize Quran.</p>`;}
+if(type==="tafseer"){content=`<h2>Tafseer</h2><p>Understand Quran.</p>`;}
+if(type==="salah"){content=`<h2>Salah</h2><p>Learn prayer.</p>`;}
+if(type==="arabic"){content=`<h2>Arabic</h2><p>Learn Arabic language.</p>`;}
+if(type==="islam"){content=`<h2>Basic Islam</h2><p>Daily Islamic knowledge.</p>`;}
+if(type==="studies"){content=`<h2>Islamic Studies</h2><p>Fiqh & teachings.</p>`;}
+if(type==="seerah"){content=`<h2>Seerah</h2><p>Life of Prophet ﷺ.</p>`;}
+if(type==="hadith"){content=`<h2>Hadith</h2><p>Sayings of Prophet ﷺ.</p>`;}
+if(type==="dua"){content=`<h2>Dua</h2><p>Daily duas.</p>`;}
+if(type==="character"){content=`<h2>Character</h2><p>Good manners.</p>`;}
+
+document.getElementById("modalData").innerHTML=content;
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
 
 /* SLIDER */
-let slides = document.querySelectorAll('.slide');
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove('active');
-  index = (index + 1) % slides.length;
-  slides[index].classList.add('active');
-}, 3000);
+let slides=document.querySelectorAll(".slide");
+let i=0;
+setInterval(()=>{
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
+},3000);
 
 </script>
 
