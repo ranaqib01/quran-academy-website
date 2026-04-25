@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Informative Quran Center</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  backdrop-filter: blur(10px);
+  background: rgba(10,34,57,0.7);
+  z-index: 1000;
+}
+
+nav img { height: 45px; }
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #2FA4FF;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #0A2239, #1E6FB8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 55px;
+  animation: fadeUp 1s ease;
+}
+
+.hero span {
+  color: #2FA4FF;
+}
+
+.hero p {
+  margin-top: 10px;
+  animation: fadeUp 1.5s ease;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 25px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #2FA4FF, #1E6FB8);
+  color: white;
+  text-decoration: none;
+  transition: 0.4s;
+  box-shadow: 0 0 20px rgba(47,164,255,0.5);
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(47,164,255,0.9);
+}
+
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  color: #0A2239;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+  background: white;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  color: #1E6FB8;
+}
+
+/* DARK SECTION */
+.dark {
+  background: linear-gradient(135deg, #0A2239, #1E6FB8);
+  color: white;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(45deg, #C9A646, #FFD700);
+  padding: 70px 20px;
+}
+
+/* CONTACT */
+.contact p {
+  margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #0A2239;
+  color: white;
+  padding: 20px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <img src="logo.png">
+  <div>
+    <a href="#">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Learn Quran <span>Beautifully</span></h1>
+  <p>1-on-1 Classes | Certified Teachers | Free Trial</p>
+  <a href="https://wa.me/923277720007" class="btn">Start Free Trial</a>
+</section>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+  <h2>Our Courses</h2>
+  <div class="courses">
+
+    <div class="card"><h3>Nazra Quran</h3></div>
+    <div class="card"><h3>Tajweed</h3></div>
+    <div class="card"><h3>Hifz Program</h3></div>
+    <div class="card"><h3>Kids Classes</h3></div>
+    <div class="card"><h3>Noorani Qaida</h3></div>
+    <div class="card"><h3>Islamic Studies</h3></div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section dark">
+  <h2>Why Choose Us</h2>
+  <p>✔ 1-on-1 Classes | ✔ Certified Teachers | ✔ Flexible Timing | ✔ Free Trial</p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Start Your Journey Today</h2>
+  <a href="https://wa.me/923277720007" class="btn">Chat on WhatsApp</a>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>📱 +92 327 7720007</p>
+  <p>📧 informativequrancenter@gmail.com</p>
+  <p>📍 Lahore, Pakistan</p>
+</section>
+
+<footer>
+  <p>© 2026 Informative Quran Center</p>
+</footer>
+
+<a href="https://wa.me/923277720007" class="whatsapp">💬</a>
+
+</body>
+</html>
