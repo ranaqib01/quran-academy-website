@@ -82,10 +82,20 @@ h1 { text-align:center; margin-top:40px; }
 
 <!-- MODAL -->
 <div class="modal" id="modal">
-<div class="modal-content">
-<span onclick="closeModal()" style="cursor:pointer;">✖</span>
-<div id="modalData"></div>
-</div>
+  <div class="modal-box">
+
+    <div class="modal-header">
+      <span onclick="closeModal()" class="close-btn">✖</span>
+      <h2 id="modalTitle"></h2>
+    </div>
+
+    <div class="modal-body" id="modalData"></div>
+
+    <div class="modal-footer">
+      <a href="https://wa.me/923277720007" class="enroll-btn">Enroll Now</a>
+    </div>
+
+  </div>
 </div>
 
 <script>
