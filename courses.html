@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Courses - Informative Quran Center</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body { font-family:Poppins; margin:0; background:#f4f7fb; }
+
+nav { background:#0A2239; padding:15px; text-align:center; }
+nav a { color:white; margin:15px; text-decoration:none; }
+
+.header {
+  background: linear-gradient(135deg,#0A2239,#1E6FB8);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.courses {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  padding:50px;
+}
+
+.card {
+  background:white;
+  width:300px;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.teachers {
+  text-align:center;
+  padding:40px;
+}
+
+.hadith {
+  background:#0A2239;
+  color:white;
+  text-align:center;
+  padding:40px;
+}
+
+.form-section {
+  text-align:center;
+  padding:40px;
+  background:#1E6FB8;
+  color:white;
+}
+
+input, select {
+  padding:10px;
+  margin:10px;
+  width:250px;
+}
+
+button {
+  padding:10px 20px;
+  background:#C9A646;
+  border:none;
+  border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="header">
+<h1>Our Quran Courses</h1>
+</div>
+
+<div class="courses">
+<div class="card"><h3>Quran Reading</h3><p>Learn Quran from basics.</p></div>
+<div class="card"><h3>Tajweed</h3><p>Improve recitation.</p></div>
+<div class="card"><h3>Hifz</h3><p>Memorize Quran.</p></div>
+<div class="card"><h3>Noorani Qaida</h3><p>Beginner course.</p></div>
+</div>
+
+<div class="teachers">
+<h2>Our Teachers</h2>
+<p>Certified male & female teachers with 5+ years experience</p>
+</div>
+
+<div class="hadith">
+<p>“The best among you are those who learn the Quran and teach it.” (Bukhari)</p>
+</div>
+
+<div class="form-section">
+
+<h2>Register Now</h2>
+
+<form onsubmit="sendToWhatsApp(); return false;">
+
+<input type="text" id="name" placeholder="Your Name" required><br>
+
+<input type="text" id="phone" placeholder="WhatsApp Number" required><br>
+
+<select id="course">
+<option>Quran Reading</option>
+<option>Tajweed</option>
+<option>Hifz</option>
+</select><br>
+
+<button type="submit">Send on WhatsApp</button>
+
+</form>
+
+</div>
+
+<script>
+function sendToWhatsApp() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let course = document.getElementById("course").value;
+
+  let message = `New Student Registration:%0AName: ${name}%0APhone: ${phone}%0ACourse: ${course}`;
+
+  let url = "https://wa.me/923277720007?text=" + message;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
