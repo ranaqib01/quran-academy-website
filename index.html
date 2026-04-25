@@ -193,7 +193,8 @@ if(type==="hadith"){content=`<h2>Hadith</h2><p>Sayings of Prophet ﷺ.</p>`;}
 if(type==="dua"){content=`<h2>Dua</h2><p>Daily duas.</p>`;}
 if(type==="character"){content=`<h2>Character</h2><p>Good manners.</p>`;}
 
-document.getElementById("modalData").innerHTML=content;
+document.getElementById("modalTitle").innerText = content.match(/<h2>(.*?)<\/h2>/)[1];
+document.getElementById("modalData").innerHTML = content;
 document.getElementById("modal").style.display="flex";
 }
 
