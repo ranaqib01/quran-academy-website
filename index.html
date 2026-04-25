@@ -1,35 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Courses - Informative Quran Center</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informative Quran Center</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body { font-family:Poppins; margin:0; background:#0A2239; color:white; }
 
-nav { background:#0A2239; padding:15px; text-align:center; }
-nav a { color:white; margin:10px; text-decoration:none; }
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0A2239;
+  color:white;
+}
 
-h1 { text-align:center; margin-top:40px; }
+/* NAV */
+nav {
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  background:#0A2239;
+}
 
-.courses {
+nav a { color:white; text-decoration:none; }
+
+/* HERO */
+.hero {
+  text-align:center;
+  padding:100px 20px;
+  background:linear-gradient(135deg,#0A2239,#1E6FB8);
+}
+
+.hero h1 { font-size:50px; }
+.hero span { color:#2FA4FF; }
+
+.btn {
+  margin-top:20px;
+  padding:12px 25px;
+  background:#2FA4FF;
+  border-radius:25px;
+  color:white;
+  text-decoration:none;
+}
+
+/* COURSES */
+.section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.cards {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
-  padding:40px;
 }
 
 .card {
-  background:rgba(255,255,255,0.05);
-  padding:20px;
   width:250px;
+  padding:20px;
   border-radius:10px;
+  background:rgba(255,255,255,0.05);
   cursor:pointer;
-  text-align:center;
+  transition:0.3s;
 }
 
-.card:hover { background:#1E6FB8; }
+.card:hover {
+  background:#1E6FB8;
+  transform:scale(1.05);
+}
 
 /* MODAL */
 .modal {
@@ -37,106 +78,63 @@ h1 { text-align:center; margin-top:40px; }
   position:fixed;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-content {
-  background:white;
-  color:black;
-  padding:30px;
-  border-radius:10px;
-  max-width:500px;
-}
-</style> /* MODAL BACKGROUND */
-.modal {
-  display:none;
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
   background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(6px);
   justify-content:center;
   align-items:center;
-  z-index:9999;
 }
 
-/* MODAL BOX */
 .modal-box {
-  background:linear-gradient(135deg,#ffffff,#f5f5f5);
+  background:white;
   color:#0A2239;
-  width:90%;
-  max-width:600px;
-  border-radius:20px;
   padding:25px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.3);
-  animation:scaleIn 0.3s ease;
-}
-
-/* HEADER */
-.modal-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.modal-header h2 {
-  margin:0;
-}
-
-/* CLOSE BUTTON */
-.close-btn {
-  cursor:pointer;
-  font-size:20px;
-  color:#333;
-}
-
-/* BODY */
-.modal-body {
-  margin-top:15px;
+  border-radius:15px;
+  width:90%;
+  max-width:650px;
   line-height:1.6;
 }
 
-/* FOOTER */
-.modal-footer {
-  margin-top:20px;
-  text-align:center;
+.close {
+  float:right;
+  cursor:pointer;
 }
 
-.enroll-btn {
-  background:linear-gradient(45deg,#2FA4FF,#1E6FB8);
+/* BUTTON */
+.enroll {
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#2FA4FF;
   color:white;
-  padding:12px 25px;
-  border-radius:25px;
+  border-radius:20px;
   text-decoration:none;
-  transition:0.3s;
 }
 
-.enroll-btn:hover {
-  transform:scale(1.05);
-  box-shadow:0 0 15px #2FA4FF;
+/* FOOTER */
+footer {
+  background:#000;
+  text-align:center;
+  padding:20px;
 }
 
-/* ANIMATION */
-@keyframes scaleIn {
-  from { transform:scale(0.8); opacity:0; }
-  to { transform:scale(1); opacity:1; }
-}
+</style>
 </head>
 
 <body>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="courses.html">Courses</a>
+<div><b>Informative Quran Center</b></div>
 </nav>
 
-<h1>Our Courses</h1>
+<section class="hero">
+<h1>Learn Quran <span>Beautifully</span></h1>
+<p>One-on-One Classes | Free Trial Available</p>
+<a href="https://wa.me/923277720007" class="btn">Start Free Trial</a>
+</section>
 
-<div class="courses">
+<section class="section">
+<h2>Our Courses</h2>
+
+<div class="cards">
 
 <div class="card" onclick="openModal('basic')">Basic Essentials of Islam</div>
 <div class="card" onclick="openModal('qaida')">Noorani Qaida</div>
@@ -154,23 +152,18 @@ h1 { text-align:center; margin-top:40px; }
 <div class="card" onclick="openModal('character')">Character Development</div>
 
 </div>
+</section>
+
+<footer>
+<p>© 2026 Informative Quran Center</p>
+</footer>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
-  <div class="modal-box">
-
-    <div class="modal-header">
-      <span onclick="closeModal()" class="close-btn">✖</span>
-      <h2 id="modalTitle"></h2>
-    </div>
-
-    <div class="modal-body" id="modalData"></div>
-
-    <div class="modal-footer">
-      <a href="https://wa.me/923277720007" class="enroll-btn">Enroll Now</a>
-    </div>
-
-  </div>
+<div class="modal-box">
+<span class="close" onclick="closeModal()">✖</span>
+<div id="modalData"></div>
+</div>
 </div>
 
 <script>
@@ -178,23 +171,89 @@ h1 { text-align:center; margin-top:40px; }
 function openModal(type){
 let content="";
 
-if(type==="basic"){content=`<h2>Basic Islam</h2><p>Learn pillars of Islam.</p>`;}
-if(type==="qaida"){content=`<h2>Noorani Qaida</h2><p>Learn Arabic basics.</p>`;}
-if(type==="reading"){content=`<h2>Quran Reading</h2><p>Learn reading fluently.</p>`;}
-if(type==="tajweed"){content=`<h2>Tajweed</h2><p>Improve recitation.</p>`;}
-if(type==="hifz"){content=`<h2>Hifz</h2><p>Memorize Quran.</p>`;}
-if(type==="tafseer"){content=`<h2>Tafseer</h2><p>Understand Quran.</p>`;}
-if(type==="salah"){content=`<h2>Salah</h2><p>Learn prayer.</p>`;}
-if(type==="arabic"){content=`<h2>Arabic</h2><p>Learn Arabic language.</p>`;}
-if(type==="islam"){content=`<h2>Basic Islam</h2><p>Daily Islamic knowledge.</p>`;}
-if(type==="studies"){content=`<h2>Islamic Studies</h2><p>Fiqh & teachings.</p>`;}
-if(type==="seerah"){content=`<h2>Seerah</h2><p>Life of Prophet ﷺ.</p>`;}
-if(type==="hadith"){content=`<h2>Hadith</h2><p>Sayings of Prophet ﷺ.</p>`;}
-if(type==="dua"){content=`<h2>Dua</h2><p>Daily duas.</p>`;}
-if(type==="character"){content=`<h2>Character</h2><p>Good manners.</p>`;}
+if(type==="basic"){
+content=`<h2>Basic Essentials of Islam</h2>
+<p>This course teaches the foundation of Islam including beliefs, pillars, and daily practices every Muslim must follow.</p>
+<ul><li>Five pillars of Islam</li><li>Basic beliefs (Aqeedah)</li><li>Daily Islamic lifestyle</li></ul>
+<p><b>Hadith:</b> “Islam is built on five pillars.” (Bukhari & Muslim)</p>`;
+}
 
-document.getElementById("modalTitle").innerText = content.match(/<h2>(.*?)<\/h2>/)[1];
-document.getElementById("modalData").innerHTML = content;
+if(type==="qaida"){
+content=`<h2>Noorani Qaida</h2>
+<p>Beginner course to learn Arabic letters and pronunciation step by step.</p>
+<ul><li>Arabic alphabets</li><li>Joining letters</li><li>Reading basics</li></ul>
+<p><b>Hadith:</b> “The best among you are those who learn the Quran.”</p>`;
+}
+
+if(type==="reading"){
+content=`<h2>Quran Reading</h2>
+<p>Learn to read Quran fluently with correct pronunciation.</p>
+<ul><li>Fluency</li><li>Confidence</li><li>Correct recitation</li></ul>
+<p><b>Hadith:</b> “The one proficient in Quran will be with angels.”</p>`;
+}
+
+if(type==="tajweed"){
+content=`<h2>Tajweed</h2>
+<p>Master Tajweed rules and beautify your recitation.</p>
+<ul><li>Makharij</li><li>Rules of letters</li><li>Advanced recitation</li></ul>
+<p><b>Hadith:</b> “Beautify the Quran with your voices.”</p>`;
+}
+
+if(type==="hifz"){
+content=`<h2>Hifz-e-Quran</h2>
+<p>Memorize Quran with proper guidance and revision plans.</p>
+<ul><li>Memorization techniques</li><li>Revision system</li></ul>
+<p><b>Hadith:</b> “Recite and rise in rank.”</p>`;
+}
+
+if(type==="tafseer"){
+content=`<h2>Quran with Tafseer</h2>
+<p>Understand the meanings and message of Quran.</p>`;
+}
+
+if(type==="salah"){
+content=`<h2>Salah Course</h2>
+<p>Learn correct method of prayer step by step.</p>
+<p><b>Hadith:</b> “Pray as you have seen me pray.”</p>`;
+}
+
+if(type==="arabic"){
+content=`<h2>Arabic Language</h2>
+<p>Learn Arabic to understand Quran directly.</p>`;
+}
+
+if(type==="islam"){
+content=`<h2>Basic Knowledge of Islam</h2>
+<p>Learn daily Islamic teachings and practices.</p>`;
+}
+
+if(type==="studies"){
+content=`<h2>Islamic Studies</h2>
+<p>Learn fiqh and Islamic rulings.</p>`;
+}
+
+if(type==="seerah"){
+content=`<h2>Seerah</h2>
+<p>Study life of Prophet Muhammad ﷺ.</p>`;
+}
+
+if(type==="hadith"){
+content=`<h2>Hadith Studies</h2>
+<p>Learn sayings of Prophet ﷺ.</p>`;
+}
+
+if(type==="dua"){
+content=`<h2>Dua & Zikr</h2>
+<p>Learn daily duas and remembrance of Allah.</p>`;
+}
+
+if(type==="character"){
+content=`<h2>Character Development</h2>
+<p>Improve behavior and personality according to Islam.</p>
+<p><b>Hadith:</b> “The best among you are those with best character.”</p>`;
+}
+
+document.getElementById("modalData").innerHTML=content;
 document.getElementById("modal").style.display="flex";
 }
 
