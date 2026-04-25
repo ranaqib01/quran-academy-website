@@ -1,174 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Courses - Informative Quran Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:Poppins;
+  background:#0A2239;
+  color:white;
+}
+
+nav {
+  text-align:center;
+  padding:15px;
+}
+
+nav a {
+  color:white;
+  margin:10px;
+  text-decoration:none;
+}
+
+h1 {
+  text-align:center;
+  margin-top:30px;
+}
+
+.courses {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  padding:40px;
+}
+
+.card {
+  width:250px;
+  padding:20px;
+  background:rgba(255,255,255,0.05);
+  border-radius:10px;
+  cursor:pointer;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover {
+  background:#1E6FB8;
+  transform:scale(1.05);
+}
+
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-box {
+  background:white;
+  color:#0A2239;
+  padding:25px;
+  border-radius:15px;
+  width:90%;
+  max-width:650px;
+  line-height:1.6;
+}
+
+.close {
+  cursor:pointer;
+  float:right;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+</nav>
+
+<h1>Our Courses</h1>
+
+<div class="courses">
+
+<div class="card" onclick="openModal('basic')">Basic Essentials of Islam</div>
+<div class="card" onclick="openModal('qaida')">Noorani Qaida</div>
+<div class="card" onclick="openModal('reading')">Quran Reading</div>
+<div class="card" onclick="openModal('tajweed')">Tajweed</div>
+<div class="card" onclick="openModal('hifz')">Hifz-e-Quran</div>
+<div class="card" onclick="openModal('tafseer')">Quran with Tafseer</div>
+<div class="card" onclick="openModal('salah')">Salah Course</div>
+<div class="card" onclick="openModal('arabic')">Arabic Language</div>
+<div class="card" onclick="openModal('islam')">Basic Knowledge of Islam</div>
+<div class="card" onclick="openModal('studies')">Islamic Studies</div>
+<div class="card" onclick="openModal('seerah')">Seerah</div>
+<div class="card" onclick="openModal('hadith')">Hadith Studies</div>
+<div class="card" onclick="openModal('dua')">Dua & Zikr</div>
+<div class="card" onclick="openModal('character')">Character Development</div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-box">
+<span class="close" onclick="closeModal()">✖</span>
+<div id="modalData"></div>
+</div>
+</div>
+
 <script>
 
 function openModal(type){
 let content="";
 
-/* BASIC ISLAM */
 if(type==="basic"){
 content=`<h2>Basic Essentials of Islam</h2>
-<p>This course covers the foundation of Islam including the five pillars, beliefs (Aqeedah), and daily practices every Muslim must know.</p>
-<ul>
-<li>Understanding Shahadah</li>
-<li>Importance of Salah</li>
-<li>Basic Islamic lifestyle</li>
-</ul>
-<p><b>Hadith:</b> “Islam is built upon five pillars…” (Sahih Bukhari & Muslim)</p>`;
+<p>Learn the foundations of Islam including beliefs, pillars, and daily practices.</p>
+<p><b>Hadith:</b> “Islam is built on five pillars.” (Bukhari & Muslim)</p>`;
 }
 
-/* QAIDA */
 if(type==="qaida"){
 content=`<h2>Noorani Qaida</h2>
-<p>Beginner course designed to teach Arabic letters, pronunciation, and basic Quran reading rules step by step.</p>
-<ul>
-<li>Arabic alphabets</li>
-<li>Joining letters</li>
-<li>Basic Tajweed rules</li>
-</ul>
-<p><b>Hadith:</b> “The best among you are those who learn the Quran and teach it.” (Bukhari)</p>`;
+<p>Learn Arabic letters and pronunciation step by step.</p>
+<p><b>Hadith:</b> “The best among you are those who learn the Quran.”</p>`;
 }
 
-/* QURAN READING */
 if(type==="reading"){
 content=`<h2>Quran Reading</h2>
-<p>Learn to read the Holy Quran fluently with correct pronunciation and confidence.</p>
-<ul>
-<li>Fluency in recitation</li>
-<li>Correct Makharij (pronunciation)</li>
-<li>Confidence in reading</li>
-</ul>
-<p><b>Hadith:</b> “The one who is proficient in the Quran will be with the noble angels.” (Muslim)</p>`;
+<p>Read Quran fluently with correct pronunciation.</p>
+<p><b>Hadith:</b> “The one proficient in the Quran will be with angels.”</p>`;
 }
 
-/* TAJWEED */
 if(type==="tajweed"){
-content=`<h2>Tajweed Course</h2>
-<p>Master the rules of Tajweed to beautify your Quran recitation.</p>
-<ul>
-<li>Makharij (letter pronunciation)</li>
-<li>Rules of Noon & Meem</li>
-<li>Advanced recitation techniques</li>
-</ul>
-<p><b>Hadith:</b> “Beautify the Quran with your voices.” (Abu Dawood)</p>`;
+content=`<h2>Tajweed</h2>
+<p>Improve recitation using proper rules.</p>
+<p><b>Hadith:</b> “Beautify the Quran with your voices.”</p>`;
 }
 
-/* HIFZ */
 if(type==="hifz"){
 content=`<h2>Hifz-e-Quran</h2>
-<p>Memorize the Quran with structured planning and daily revision techniques.</p>
-<ul>
-<li>Memorization techniques</li>
-<li>Daily revision system</li>
-<li>Strong retention methods</li>
-</ul>
-<p><b>Hadith:</b> “The companion of the Quran will be told: Recite and rise…” (Tirmidhi)</p>`;
+<p>Memorize Quran with structured plans and revision.</p>
+<p><b>Hadith:</b> “Recite and rise in rank.”</p>`;
 }
 
-/* TAFSEER */
 if(type==="tafseer"){
 content=`<h2>Quran with Tafseer</h2>
-<p>Understand the meanings, context, and lessons of the Quran.</p>
-<ul>
-<li>Translation & explanation</li>
-<li>Context of verses</li>
-<li>Practical life lessons</li>
-</ul>
-<p><b>Hadith:</b> “The best of you are those who learn the Quran and teach it.” (Bukhari)</p>`;
+<p>Understand meanings and lessons of Quran.</p>`;
 }
 
-/* SALAH */
 if(type==="salah"){
 content=`<h2>Salah Course</h2>
-<p>Learn how to perform prayer correctly according to Sunnah.</p>
-<ul>
-<li>Step-by-step Salah</li>
-<li>Duas in prayer</li>
-<li>Common mistakes correction</li>
-</ul>
-<p><b>Hadith:</b> “Pray as you have seen me praying.” (Bukhari)</p>`;
+<p>Learn correct method of prayer.</p>
+<p><b>Hadith:</b> “Pray as you have seen me pray.”</p>`;
 }
 
-/* ARABIC */
 if(type==="arabic"){
-content=`<h2>Arabic Language Course</h2>
-<p>Learn Arabic to understand the Quran directly.</p>
-<ul>
-<li>Basic grammar</li>
-<li>Vocabulary building</li>
-<li>Quranic Arabic understanding</li>
-</ul>
-<p><b>Hadith:</b> “Love the Arabic language for three reasons…”</p>`;
+content=`<h2>Arabic Language</h2>
+<p>Learn Arabic to understand Quran directly.</p>`;
 }
 
-/* ISLAM KNOWLEDGE */
 if(type==="islam"){
 content=`<h2>Basic Knowledge of Islam</h2>
-<p>Learn essential Islamic teachings for daily life.</p>
-<ul>
-<li>Halal & Haram</li>
-<li>Daily Sunnah practices</li>
-<li>Islamic manners</li>
-</ul>
-<p><b>Hadith:</b> “Seeking knowledge is obligatory on every Muslim.” (Ibn Majah)</p>`;
+<p>Learn daily Islamic teachings.</p>`;
 }
 
-/* ISLAMIC STUDIES */
 if(type==="studies"){
 content=`<h2>Islamic Studies</h2>
-<p>Comprehensive understanding of Islam including fiqh and daily rulings.</p>
-<ul>
-<li>Fiqh basics</li>
-<li>Islamic laws</li>
-<li>Daily life guidance</li>
-</ul>
-<p><b>Hadith:</b> “Whoever follows a path in search of knowledge…” (Muslim)</p>`;
+<p>Learn fiqh and Islamic rulings.</p>`;
 }
 
-/* SEERAH */
 if(type==="seerah"){
 content=`<h2>Seerah</h2>
-<p>Study the life of Prophet Muhammad ﷺ and learn from his character.</p>
-<ul>
-<li>Early life of Prophet ﷺ</li>
-<li>Makki & Madni life</li>
-<li>Lessons from Seerah</li>
-</ul>
-<p><b>Quran:</b> “Indeed in the Messenger of Allah you have a perfect example.” (33:21)</p>`;
+<p>Life of Prophet Muhammad ﷺ.</p>`;
 }
 
-/* HADITH */
 if(type==="hadith"){
 content=`<h2>Hadith Studies</h2>
-<p>Learn sayings of Prophet ﷺ and their meanings.</p>
-<ul>
-<li>Famous Hadith collections</li>
-<li>Understanding Hadith</li>
-<li>Application in life</li>
-</ul>
-<p><b>Hadith:</b> “Whoever preserves my Sunnah…”</p>`;
+<p>Learn sayings of Prophet ﷺ.</p>`;
 }
 
-/* DUA */
 if(type==="dua"){
-content=`<h2>Dua & Zikr Course</h2>
-<p>Learn daily duas and remembrance of Allah.</p>
-<ul>
-<li>Morning & evening duas</li>
-<li>Daily life duas</li>
-<li>Importance of zikr</li>
-</ul>
-<p><b>Hadith:</b> “The best remembrance is La ilaha illallah.” (Tirmidhi)</p>`;
+content=`<h2>Dua & Zikr</h2>
+<p>Daily duas and remembrance of Allah.</p>`;
 }
 
-/* CHARACTER */
 if(type==="character"){
 content=`<h2>Character Development</h2>
-<p>Improve your manners, behavior, and spiritual growth.</p>
-<ul>
-<li>Good character (Akhlaq)</li>
-<li>Patience & sincerity</li>
-<li>Islamic personality</li>
-</ul>
-<p><b>Hadith:</b> “The best among you are those with best character.” (Bukhari)</p>`;
+<p>Improve Islamic manners and personality.</p>
+<p><b>Hadith:</b> “The best among you are those with best character.”</p>`;
 }
 
 document.getElementById("modalData").innerHTML = content;
@@ -180,3 +206,6 @@ document.getElementById("modal").style.display = "none";
 }
 
 </script>
+
+</body>
+</html>
