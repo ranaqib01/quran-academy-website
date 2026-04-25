@@ -8,62 +8,112 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {margin:0;font-family:Poppins;background:#0A2239;color:white;}
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0A2239;
+  color:white;
+}
 
+/* NAV */
 nav {
-display:flex;
-justify-content:space-between;
-padding:15px 40px;
-background:#0A2239;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#0A2239;
+}
+nav a {
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
 }
 
-nav a {color:white;text-decoration:none;margin-left:20px;}
-
+/* HERO */
 .hero {
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#0A2239,#1E6FB8);
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#0A2239,#1E6FB8);
 }
 
-.hero h1 {font-size:55px;}
-.hero span {color:#2FA4FF;}
+.hero h1 {
+  font-size:60px;
+  margin:0;
+}
 
+.hero span {
+  color:#2FA4FF;
+}
+
+.hero p {
+  margin-top:15px;
+  font-size:18px;
+}
+
+/* BUTTON */
 .btn {
-padding:14px 30px;
-background:#2FA4FF;
-border-radius:30px;
-color:white;
-text-decoration:none;
-margin-top:20px;
+  margin-top:25px;
+  padding:14px 35px;
+  border-radius:30px;
+  background:#2FA4FF;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
 
+.btn:hover {
+  background:#1E6FB8;
+}
+
+/* SECTION */
 .section {
-padding:80px 20px;
-text-align:center;
+  padding:90px 20px;
+  text-align:center;
 }
 
+.section h2 {
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+/* CARDS */
 .cards {
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
 }
 
 .card {
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-width:250px;
+  width:260px;
+  padding:25px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  transition:0.3s;
 }
 
+.card:hover {
+  transform:translateY(-8px);
+  background:#1E6FB8;
+}
+
+/* CTA */
+.cta {
+  background:linear-gradient(45deg,#C9A646,#FFD700);
+  color:black;
+  padding:80px 20px;
+}
+
+/* FOOTER */
 footer {
-background:#000;
-padding:20px;
-text-align:center;
+  background:#000;
+  padding:20px;
+  text-align:center;
 }
 </style>
 </head>
@@ -79,19 +129,44 @@ text-align:center;
 </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <h1>Learn Quran <span>Beautifully</span></h1>
-<p>One-on-One Classes | Certified Teachers | Free Trial</p>
-<a href="courses.html" class="btn">View Courses</a>
+<p>1-on-1 Classes | Certified Teachers | Free Trial Available</p>
+<a href="courses.html" class="btn">Explore Courses</a>
 </section>
 
+<!-- COURSES PREVIEW -->
+<section class="section">
+<h2>Our Programs</h2>
+
+<div class="cards">
+<div class="card">Quran Reading</div>
+<div class="card">Tajweed</div>
+<div class="card">Hifz Program</div>
+<div class="card">Islamic Studies</div>
+</div>
+
+</section>
+
+<!-- WHY -->
 <section class="section">
 <h2>Why Choose Us</h2>
+
 <div class="cards">
-<div class="card">✔ Certified Male & Female Teachers</div>
-<div class="card">✔ Flexible Timings</div>
-<div class="card">✔ Worldwide Classes</div>
+<div class="card">✔ 1-on-1 Classes</div>
+<div class="card">✔ Certified Teachers</div>
+<div class="card">✔ Flexible Timing</div>
+<div class="card">✔ Worldwide Access</div>
 </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Start Your Quran Journey Today</h2>
+<p>3 Days Free Trial Available</p>
+<a href="https://wa.me/923277720007" class="btn">Chat on WhatsApp</a>
 </section>
 
 <footer>
