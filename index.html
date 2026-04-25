@@ -10,170 +10,141 @@
 
 <style>
 
-/* GLOBAL */
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0A2239;
+  color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  backdrop-filter: blur(10px);
-  background: rgba(10,34,57,0.7);
-  z-index: 1000;
+  position:fixed;
+  width:100%;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(10,34,57,0.7);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-nav img { height: 45px; }
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #2FA4FF;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  transition: 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
+nav a { color:white; margin:0 15px; text-decoration:none; }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #0A2239, #1E6FB8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  flex-direction: column;
-  padding: 20px;
+  height:100vh;
+  background:
+  linear-gradient(rgba(10,34,57,0.8),rgba(10,34,57,0.9)),
+  url('https://images.unsplash.com/photo-1507692049790-de58290a4334');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.hero h1 {
-  font-size: 55px;
-  animation: fadeUp 1s ease;
-}
+.hero h1 { font-size:65px; }
 
-.hero span {
-  color: #2FA4FF;
-}
-
-.hero p {
-  margin-top: 10px;
-  animation: fadeUp 1.5s ease;
-}
+.hero span { color:#2FA4FF; }
 
 /* BUTTON */
 .btn {
-  margin-top: 25px;
-  padding: 14px 30px;
-  border-radius: 30px;
-  background: linear-gradient(45deg, #2FA4FF, #1E6FB8);
-  color: white;
-  text-decoration: none;
-  transition: 0.4s;
-  box-shadow: 0 0 20px rgba(47,164,255,0.5);
+  margin-top:20px;
+  padding:14px 30px;
+  border-radius:30px;
+  background:linear-gradient(45deg,#2FA4FF,#1E6FB8);
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
 }
 
-.btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 30px rgba(47,164,255,0.9);
-}
+.btn:hover { transform:scale(1.1); box-shadow:0 0 30px #2FA4FF; }
 
 /* SECTION */
 .section {
-  padding: 80px 20px;
-  text-align: center;
+  padding:100px 20px;
+  text-align:center;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
 }
 
-.section h2 {
-  color: #0A2239;
-  margin-bottom: 30px;
+.section.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* CARDS */
-.courses {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+.cards {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
 }
 
 .card {
-  width: 260px;
-  padding: 25px;
-  border-radius: 15px;
-  background: white;
-  transition: 0.4s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width:260px;
+  padding:25px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  transition:0.4s;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform:translateY(-10px) scale(1.05);
+  background:#1E6FB8;
 }
 
-.card h3 {
-  color: #1E6FB8;
+/* IMAGE SECTION */
+.image-section {
+  background:
+  linear-gradient(rgba(10,34,57,0.8),rgba(10,34,57,0.9)),
+  url('https://images.unsplash.com/photo-1529070538774-1843cb3265df');
+  background-size:cover;
+  padding:100px 20px;
 }
 
-/* DARK SECTION */
-.dark {
-  background: linear-gradient(135deg, #0A2239, #1E6FB8);
-  color: white;
+/* SLIDER */
+.slider {
+  max-width:600px;
+  margin:auto;
+  overflow:hidden;
+}
+
+.slide {
+  display:none;
+  font-style:italic;
+}
+
+.slide.active {
+  display:block;
 }
 
 /* CTA */
 .cta {
-  background: linear-gradient(45deg, #C9A646, #FFD700);
-  padding: 70px 20px;
-}
-
-/* CONTACT */
-.contact p {
-  margin: 10px 0;
+  background:linear-gradient(45deg,#C9A646,#FFD700);
+  color:black;
+  padding:80px;
 }
 
 /* FOOTER */
 footer {
-  background: #0A2239;
-  color: white;
-  padding: 20px;
+  background:#000;
+  padding:20px;
 }
 
 /* WHATSAPP */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
 }
 
 </style>
@@ -181,63 +152,94 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <img src="logo.png">
-  <div>
-    <a href="#">Home</a>
-    <a href="#courses">Courses</a>
-    <a href="#contact">Contact</a>
-  </div>
+<div><b>Informative Quran Center</b></div>
+<div>
+<a href="#">Home</a>
+<a href="courses.html">Courses</a>
+<a href="contact.html">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Learn Quran <span>Beautifully</span></h1>
-  <p>1-on-1 Classes | Certified Teachers | Free Trial</p>
-  <a href="https://wa.me/923277720007" class="btn">Start Free Trial</a>
+<h1>Learn Quran <span>Beautifully</span></h1>
+<p>1-on-1 Classes | Certified Teachers | Free Trial</p>
+<a href="https://wa.me/923277720007" class="btn">Start Free Trial</a>
 </section>
 
 <!-- COURSES -->
-<section class="section" id="courses">
-  <h2>Our Courses</h2>
-  <div class="courses">
+<section class="section">
+<h2>Our Courses</h2>
+<div class="cards">
+<div class="card">Quran Reading</div>
+<div class="card">Tajweed</div>
+<div class="card">Hifz Program</div>
+</div>
+</section>
 
-    <div class="card"><h3>Nazra Quran</h3></div>
-    <div class="card"><h3>Tajweed</h3></div>
-    <div class="card"><h3>Hifz Program</h3></div>
-    <div class="card"><h3>Kids Classes</h3></div>
-    <div class="card"><h3>Noorani Qaida</h3></div>
-    <div class="card"><h3>Islamic Studies</h3></div>
-
-  </div>
+<!-- IMAGE SECTION -->
+<section class="section image-section">
+<h2>Learn with Peace & Focus</h2>
+<p>Experience spiritual growth with expert teachers</p>
 </section>
 
 <!-- WHY -->
-<section class="section dark">
-  <h2>Why Choose Us</h2>
-  <p>✔ 1-on-1 Classes | ✔ Certified Teachers | ✔ Flexible Timing | ✔ Free Trial</p>
+<section class="section">
+<h2>Why Choose Us</h2>
+<div class="cards">
+<div class="card">✔ Certified Teachers</div>
+<div class="card">✔ Flexible Timing</div>
+<div class="card">✔ Worldwide Access</div>
+</div>
+</section>
+
+<!-- TESTIMONIAL SLIDER -->
+<section class="section">
+<h2>What Students Say</h2>
+
+<div class="slider">
+<div class="slide active">“Amazing teachers and great experience!”</div>
+<div class="slide">“My kids improved quickly. Highly recommended.”</div>
+<div class="slide">“Professional and flexible classes.”</div>
+</div>
+
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Start Your Journey Today</h2>
-  <a href="https://wa.me/923277720007" class="btn">Chat on WhatsApp</a>
-</section>
-
-<!-- CONTACT -->
-<section class="section contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>📱 +92 327 7720007</p>
-  <p>📧 informativequrancenter@gmail.com</p>
-  <p>📍 Lahore, Pakistan</p>
+<h2>Start Your Quran Journey Today</h2>
+<a href="https://wa.me/923277720007" class="btn">Chat on WhatsApp</a>
 </section>
 
 <footer>
-  <p>© 2026 Informative Quran Center</p>
+<p>© 2026 Informative Quran Center</p>
 </footer>
 
 <a href="https://wa.me/923277720007" class="whatsapp">💬</a>
+
+<script>
+
+/* SCROLL ANIMATION */
+let sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    let offset = sec.offsetTop - 300;
+    if(window.scrollY > offset) sec.classList.add('show');
+  });
+});
+
+/* SLIDER */
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 3000);
+
+</script>
 
 </body>
 </html>
