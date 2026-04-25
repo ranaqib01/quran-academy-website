@@ -1,120 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Informative Quran Center</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 <style>
+body { margin:0; font-family:Poppins; background:#0A2239; color:white; }
 
-body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0A2239;
-  color:white;
-}
+nav { text-align:center; padding:15px; background:#0A2239; }
+nav a { color:white; margin:15px; text-decoration:none; }
 
-/* NAV */
-nav {
-  display:flex;
-  justify-content:space-between;
-  padding:15px 40px;
-  background:#0A2239;
-}
-
-nav a { color:white; text-decoration:none; }
-
-/* HERO */
 .hero {
   text-align:center;
   padding:100px 20px;
   background:linear-gradient(135deg,#0A2239,#1E6FB8);
 }
 
-.hero h1 { font-size:50px; }
-.hero span { color:#2FA4FF; }
-
 .btn {
-  margin-top:20px;
   padding:12px 25px;
   background:#2FA4FF;
+  color:white;
   border-radius:25px;
-  color:white;
   text-decoration:none;
 }
 
-/* COURSES */
-.section {
-  padding:60px 20px;
-  text-align:center;
-}
-
-.cards {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.card {
-  width:250px;
-  padding:20px;
-  border-radius:10px;
-  background:rgba(255,255,255,0.05);
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.card:hover {
-  background:#1E6FB8;
-  transform:scale(1.05);
-}
-
-/* MODAL */
-.modal {
-  display:none;
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.7);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-box {
-  background:white;
-  color:#0A2239;
-  padding:25px;
-  border-radius:15px;
-  width:90%;
-  max-width:650px;
-  line-height:1.6;
-}
-
-.close {
-  float:right;
-  cursor:pointer;
-}
-
-/* BUTTON */
-.enroll {
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  background:#2FA4FF;
-  color:white;
-  border-radius:20px;
-  text-decoration:none;
-}
-
-/* FOOTER */
-footer {
-  background:#000;
-  text-align:center;
-  padding:20px;
-}
+.section { padding:60px 20px; text-align:center; }
 
 </style>
 </head>
@@ -122,175 +32,24 @@ footer {
 <body>
 
 <nav>
-<div><b>Informative Quran Center</b></div>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<section class="hero">
-<h1>Learn Quran <span>Beautifully</span></h1>
+<div class="hero">
+<h1>Learn Quran Beautifully</h1>
 <p>One-on-One Classes | Free Trial Available</p>
-<a href="https://wa.me/923277720007" class="btn">Start Free Trial</a>
-</section>
-
-<section class="section">
-<h2>Our Courses</h2>
-
-<div class="cards">
-
-<div class="card" onclick="openModal('basic')">Basic Essentials of Islam</div>
-<div class="card" onclick="openModal('qaida')">Noorani Qaida</div>
-<div class="card" onclick="openModal('reading')">Quran Reading</div>
-<div class="card" onclick="openModal('tajweed')">Tajweed</div>
-<div class="card" onclick="openModal('hifz')">Hifz-e-Quran</div>
-<div class="card" onclick="openModal('tafseer')">Quran with Tafseer</div>
-<div class="card" onclick="openModal('salah')">Salah Course</div>
-<div class="card" onclick="openModal('arabic')">Arabic Language</div>
-<div class="card" onclick="openModal('islam')">Basic Knowledge of Islam</div>
-<div class="card" onclick="openModal('studies')">Islamic Studies</div>
-<div class="card" onclick="openModal('seerah')">Seerah</div>
-<div class="card" onclick="openModal('hadith')">Hadith Studies</div>
-<div class="card" onclick="openModal('dua')">Dua & Zikr</div>
-<div class="card" onclick="openModal('character')">Character Development</div>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 Informative Quran Center</p>
-</footer>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-box">
-<span class="close" onclick="closeModal()">✖</span>
-<div id="modalData"></div>
-</div>
+<a href="courses.html" class="btn">View Courses</a>
 </div>
 
-<script>
-
-function openModal(type){
-let content="";
-
-if(type==="basic"){
-content=`<h2>Basic Essentials of Islam</h2>
-<p>This course teaches the foundation of Islam including beliefs, pillars, and daily practices every Muslim must follow.</p>
-<ul><li>Five pillars of Islam</li><li>Basic beliefs (Aqeedah)</li><li>Daily Islamic lifestyle</li></ul>
-<p><b>Hadith:</b> “Islam is built on five pillars.” (Bukhari & Muslim)</p>`;
-}
-
-if(type==="qaida"){
-content=`<h2>Noorani Qaida</h2>
-<p>Beginner course to learn Arabic letters and pronunciation step by step.</p>
-<ul><li>Arabic alphabets</li><li>Joining letters</li><li>Reading basics</li></ul>
-<p><b>Hadith:</b> “The best among you are those who learn the Quran.”</p>`;
-}
-
-if(type==="reading"){
-content=`<h2>Quran Reading</h2>
-<p>Learn to read Quran fluently with correct pronunciation.</p>
-<ul><li>Fluency</li><li>Confidence</li><li>Correct recitation</li></ul>
-<p><b>Hadith:</b> “The one proficient in Quran will be with angels.”</p>`;
-}
-
-if(type==="tajweed"){
-content=`<h2>Tajweed</h2>
-<p>Master Tajweed rules and beautify your recitation.</p>
-<ul><li>Makharij</li><li>Rules of letters</li><li>Advanced recitation</li></ul>
-<p><b>Hadith:</b> “Beautify the Quran with your voices.”</p>`;
-}
-
-if(type==="hifz"){
-content=`<h2>Hifz-e-Quran</h2>
-<p>Memorize Quran with proper guidance and revision plans.</p>
-<ul><li>Memorization techniques</li><li>Revision system</li></ul>
-<p><b>Hadith:</b> “Recite and rise in rank.”</p>`;
-}
-
-if(type==="tafseer"){
-content=`<h2>Quran with Tafseer</h2>
-<p>Understand the meanings and message of Quran.</p>`;
-}
-
-if(type==="salah"){
-content=`<h2>Salah Course</h2>
-<p>Learn correct method of prayer step by step.</p>
-<p><b>Hadith:</b> “Pray as you have seen me pray.”</p>`;
-}
-
-if(type==="arabic"){
-content=`<h2>Arabic Language</h2>
-<p>Learn Arabic to understand Quran directly.</p>`;
-}
-
-if(type==="islam"){
-content=`<h2>Basic Knowledge of Islam</h2>
-<p>Learn daily Islamic teachings and practices.</p>`;
-}
-
-if(type==="studies"){
-content=`<h2>Islamic Studies</h2>
-<p>Learn fiqh and Islamic rulings.</p>`;
-}
-
-if(type==="seerah"){
-content=`<h2>Seerah</h2>
-<p>Study life of Prophet Muhammad ﷺ.</p>`;
-}
-
-if(type==="hadith"){
-content=`<h2>Hadith Studies</h2>
-<p>Learn sayings of Prophet ﷺ.</p>`;
-}
-
-if(type==="dua"){
-content=`<h2>Dua & Zikr</h2>
-<p>Learn daily duas and remembrance of Allah.</p>`;
-}
-
-if(type==="character"){
-content=`<h2>Character Development</h2>
-<p>Improve behavior and personality according to Islam.</p>
-<p><b>Hadith:</b> “The best among you are those with best character.”</p>`;
-}
-
-document.getElementById("modalData").innerHTML=content;
-document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
-
-</script>
-
-<!-- CONTACT SECTION -->
-<section style="padding:60px 20px; text-align:center; background:#1E6FB8;">
-
-<h2>Contact Us</h2>
-
-<p><b>Phone / WhatsApp:</b> +92 327 7720007</p>
-<p><b>Email:</b> informativequrancenter@gmail.com</p>
-<p><b>Location:</b> Lahore, Pakistan (Online Worldwide)</p>
-
-<a href="https://wa.me/923277720007" 
-style="display:inline-block; margin-top:15px; padding:12px 25px; background:#0A2239; color:white; border-radius:25px; text-decoration:none;">
-Chat on WhatsApp
-</a>
-
-</section>
-
-<!-- ABOUT SECTION -->
-<section style="padding:60px 20px; text-align:center;">
-
-<h2>About Informative Quran Center</h2>
-
+<div class="section">
+<h2>About Us</h2>
 <p>
-We are an online Quran academy providing one-on-one classes for kids and adults worldwide.
-Our certified male and female teachers have 5+ years of experience.
-We offer Quran Reading, Tajweed, Hifz, Islamic Studies, and more.
+Informative Quran Center offers online Quran classes worldwide with certified teachers.
+We provide Tajweed, Hifz, Islamic Studies, and more.
 </p>
+</div>
 
-<p><b>✔ 3 Days Free Trial Available</b></p>
-
-</section> </body>
+</body>
 </html>
