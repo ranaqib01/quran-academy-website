@@ -1,80 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Informative Quran Center</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Courses - Informative Quran Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 <style>
+body { font-family:Poppins; margin:0; background:#0A2239; color:white; }
 
-body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0A2239;
-  color:white;
-}
+nav { background:#0A2239; padding:15px; text-align:center; }
+nav a { color:white; margin:10px; text-decoration:none; }
 
-/* NAV */
-nav {
-  position:fixed;
-  width:100%;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  background:rgba(10,34,57,0.7);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
+h1 { text-align:center; margin-top:40px; }
 
-nav a { color:white; margin:0 15px; text-decoration:none; }
-
-/* HERO */
-.hero {
-  height:100vh;
-  background:linear-gradient(135deg,#0A2239,#1E6FB8);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.hero h1 { font-size:60px; }
-.hero span { color:#2FA4FF; }
-
-/* BUTTON */
-.btn {
-  margin-top:20px;
-  padding:14px 30px;
-  border-radius:30px;
-  background:linear-gradient(45deg,#2FA4FF,#1E6FB8);
-  text-decoration:none;
-  color:white;
-}
-
-/* SECTION */
-.section {
-  padding:100px 20px;
-  text-align:center;
-}
-
-/* CARDS */
-.cards {
+.courses {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
+  padding:40px;
 }
 
 .card {
-  width:260px;
-  padding:20px;
-  border-radius:10px;
   background:rgba(255,255,255,0.05);
+  padding:20px;
+  width:250px;
+  border-radius:10px;
   cursor:pointer;
+  text-align:center;
 }
+
+.card:hover { background:#1E6FB8; }
 
 /* MODAL */
 .modal {
@@ -94,38 +49,19 @@ nav a { color:white; margin:0 15px; text-decoration:none; }
   border-radius:10px;
   max-width:500px;
 }
-
-/* SLIDER */
-.slide { display:none; }
-.slide.active { display:block; }
-
-/* FOOTER */
-footer { background:#000; padding:20px; }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-<div><b>Informative Quran Center</b></div>
-<div>
-<a href="#">Home</a>
-</div>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<h1>Learn Quran <span>Beautifully</span></h1>
-<p>1-on-1 Classes | Free Trial</p>
-<a href="https://wa.me/923277720007" class="btn">Start Now</a>
-</section>
+<h1>Our Courses</h1>
 
-<!-- COURSES -->
-<section class="section">
-<h2>Our Courses</h2>
-
-<div class="cards">
+<div class="courses">
 
 <div class="card" onclick="openModal('basic')">Basic Essentials of Islam</div>
 <div class="card" onclick="openModal('qaida')">Noorani Qaida</div>
@@ -143,21 +79,6 @@ footer { background:#000; padding:20px; }
 <div class="card" onclick="openModal('character')">Character Development</div>
 
 </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="section">
-<h2>What Students Say</h2>
-
-<div class="slide active">Amazing teachers and great experience!</div>
-<div class="slide">My kids improved quickly!</div>
-<div class="slide">Highly recommended academy!</div>
-
-</section>
-
-<footer>
-<p>© 2026 Informative Quran Center</p>
-</footer>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
@@ -169,7 +90,6 @@ footer { background:#000; padding:20px; }
 
 <script>
 
-/* MODAL DATA */
 function openModal(type){
 let content="";
 
@@ -195,15 +115,6 @@ document.getElementById("modal").style.display="flex";
 function closeModal(){
 document.getElementById("modal").style.display="none";
 }
-
-/* SLIDER */
-let slides=document.querySelectorAll(".slide");
-let i=0;
-setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
-},3000);
 
 </script>
 
